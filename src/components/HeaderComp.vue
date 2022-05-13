@@ -1,14 +1,14 @@
 <template>
   <header>
 
-  <div class="container mb_container d-flex align-items-center justify-content-between h-100">
+  <div class="container mb_container d-flex align-items-stretch justify-content-between">
 
     <div class="logo">
       <img src="../assets/img/dc-logo.png" alt="">
     </div>
 
     <nav>
-      <ul class="d-flex align-items-end">
+      <ul class="d-flex">
         <li :class="{'active' : page.isActive}" v-for="(page, index) in pagesCategories" :key="`page-${index}`"><a :href="page.href">{{page.name.toUpperCase()}}</a></li>
       </ul>
     </nav>
@@ -87,9 +87,12 @@ export default {
 
   header{
     height: 100px;
+    display: flex;
+    align-items: center;
   }
   .logo{
     height: 70px;
+    flex-shrink: 0;
     img{
       width: 100%;
       height: 100%;
@@ -97,7 +100,11 @@ export default {
   }
   ul{
     list-style: none;
+    height: 100%;
+    margin-top: 15px;
+    margin-bottom: 0;
     li{
+      height: 100%;
       border-bottom: 4px solid white;
       &:hover,
       &.active{
@@ -108,7 +115,6 @@ export default {
       }
       a{
         display: inline-block;
-        margin: 44px 5px;
         padding: 0px 5px;
         color: black;
       }
