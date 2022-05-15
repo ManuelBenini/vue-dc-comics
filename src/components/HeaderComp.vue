@@ -9,7 +9,11 @@
 
     <nav>
       <ul class="d-flex">
-        <li :class="{'active' : page.isActive}" v-for="(page, index) in pagesCategories" :key="`page-${index}`"><a :href="page.href">{{page.name.toUpperCase()}}</a></li>
+        <li :class="{'active' : page.isActive}" 
+        v-for="(page, index) in pagesCategories" 
+        :key="`page-${index}`">
+          <a :href="page.href">{{page.name.toUpperCase()}}</a>
+        </li>
       </ul>
     </nav>
 

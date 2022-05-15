@@ -5,48 +5,12 @@
 
     <ul class="d-flex">
 
-      <li>
+      <li v-for="(category, index) in categories" :key="`image(${index})`">
         <div class="image">
-          <img src="../assets/img/buy-comics-digital-comics.png" alt="">
+          <img :class="{'shop-locator' : category.class != null}" :src="category.path" alt="">
         </div>
         <div class="category-name">
-          <a href="#">Digital Comics</a> 
-        </div>
-      </li>
-
-      <li>
-        <div class="image">
-          <img src="../assets/img/buy-comics-merchandise.png" alt="">
-        </div>
-        <div class="category-name">
-          <a href="#">DC MERCHANDISE</a> 
-        </div>
-      </li>
-
-      <li>
-        <div class="image">
-          <img src="../assets/img/buy-comics-subscriptions.png" alt="">
-        </div>
-        <div class="category-name">
-          <a href="#">SUBSCRIPTION</a> 
-        </div>
-      </li>
-
-      <li>
-        <div class="image">
-          <img class="shop-locator" src="../assets/img/buy-comics-shop-locator.png" alt="">
-        </div>
-        <div class="category-name">
-          <a href="#">COMIC SHOP LOCATOR</a> 
-        </div>
-      </li>
-
-      <li>
-        <div class="image">
-          <img src="../assets/img/buy-dc-power-visa.svg" alt="">
-        </div>
-        <div class="category-name">
-          <a href="#">DC POWER VISA</a> 
+          <a href="#">{{category.name}}</a> 
         </div>
       </li>
 
@@ -59,8 +23,45 @@
 </template>
 
 <script>
+import digitalComicsLogo from "../assets/img/buy-comics-digital-comics.png";
+import dcMerchandiseLogo from "../assets/img/buy-comics-merchandise.png";
+import subscriptionLogo from "../assets/img/buy-comics-subscriptions.png";
+import comicShopLocatorLogo from "../assets/img/buy-comics-shop-locator.png";
+import dcPowerVisaLogo from "../assets/img/buy-dc-power-visa.svg";
+
 export default {
   name: 'CategoriesComp',
+  data(){
+    return{
+      categories: [
+        {
+          name: 'DIGITAL COMICS',
+          path: digitalComicsLogo,
+          class: null
+        },
+        {
+          name: 'DC MERCHANDISE',
+          path: dcMerchandiseLogo,
+          class: null
+        },
+        {
+          name: 'SUBSCRIPTION',
+          path: subscriptionLogo,
+          class: null
+        },
+        {
+          name: 'COMIC SHOP LOCATOR',
+          path: comicShopLocatorLogo,
+          class: 'shop-locator'
+        },
+        {
+          name: 'DC POWER VISA',
+          path: dcPowerVisaLogo,
+          class: null
+        }
+      ]
+    }
+  }
 }
 </script>
 
