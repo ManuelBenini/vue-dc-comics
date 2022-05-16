@@ -60,33 +60,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/style/variables';
-@import '../assets/style/mixin';
+  @import '../assets/style/variables';
+  @import '../assets/style/mixin';
 
-.categories{
-  background-color: $primary-color;
-  
-  .mb-container{
-    min-height: 170px;
-    @include align-center();
-  }
+  .categories{
+    background-color: $primary-color;
+    
+    .mb-container{
+      min-height: 170px;
+      @include align-center();
+    }
 
-  li{
-    margin-right: 40px;
-    padding-right: 20px;
-    @include align-center();
-    .image{
-      width: 50px;
-      margin-right: 10px;
-      img{
-        width: 100%;
-      }
-      .shop-locator{
-        width: 70%;
+    li{
+      margin-right: 40px;
+      padding-right: 20px;
+      @include align-center();
+      .image{
+        width: 50px;
+        margin-right: 10px;
+        img{
+          width: 100%;
+        }
+        .shop-locator{
+          width: 70%;
+        }
       }
     }
+    
   }
-  
-}
 
 </style>

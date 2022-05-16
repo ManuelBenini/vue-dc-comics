@@ -113,9 +113,9 @@ export default {
       &:hover,
       &.active{
         border-color: $primary-color;
+      }
       &:hover a{
         color: $primary-color;
-      }
       }
       a{
         display: inline-block;
