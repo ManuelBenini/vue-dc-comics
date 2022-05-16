@@ -23,12 +23,6 @@
 </template>
 
 <script>
-import digitalComicsLogo from "../assets/img/buy-comics-digital-comics.png";
-import dcMerchandiseLogo from "../assets/img/buy-comics-merchandise.png";
-import subscriptionLogo from "../assets/img/buy-comics-subscriptions.png";
-import comicShopLocatorLogo from "../assets/img/buy-comics-shop-locator.png";
-import dcPowerVisaLogo from "../assets/img/buy-dc-power-visa.svg";
-
 export default {
   name: 'CategoriesComp',
   data(){
@@ -36,27 +30,27 @@ export default {
       categories: [
         {
           name: 'DIGITAL COMICS',
-          path: digitalComicsLogo,
+          path: require('../assets/img/buy-comics-digital-comics.png'),
           class: null
         },
         {
           name: 'DC MERCHANDISE',
-          path: dcMerchandiseLogo,
+          path: require('../assets/img/buy-comics-merchandise.png'),
           class: null
         },
         {
           name: 'SUBSCRIPTION',
-          path: subscriptionLogo,
+          path: require('../assets/img/buy-comics-subscriptions.png'),
           class: null
         },
         {
           name: 'COMIC SHOP LOCATOR',
-          path: comicShopLocatorLogo,
+          path: require('../assets/img/buy-comics-shop-locator.png'),
           class: 'shop-locator'
         },
         {
           name: 'DC POWER VISA',
-          path: dcPowerVisaLogo,
+          path: require('../assets/img/buy-dc-power-visa.svg'),
           class: null
         }
       ]
