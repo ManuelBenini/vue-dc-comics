@@ -4,11 +4,15 @@
 
     <JumbotronComp/>
 
-    <div class="container mb-container">
+    <div class="container mb-container d-flex flex-wrap">
 
       <div class="mb-current-series">CURRENT SERIES</div>
 
-      <CardComp :comics='comics'/>
+      <CardComp 
+        :key="`comic${index}`"
+        v-for="(comic,index) in comics" 
+        :serieData="comic"
+      />
 
       <div class="moreBtn">
         <button class="mb-load-more">LOAD MORE</button>
@@ -22,8 +26,8 @@
 
 <script>
   import comicsJson from '../assets/data/comics.json'
-  import CardComp from './CardComp.vue'
   import JumbotronComp from './JumbotronComp.vue';
+  import CardComp from './CardComp.vue';
 
   export default {
     name: "MainComp",
@@ -45,7 +49,7 @@
     background-color: #1c1c1c;
     .mb-container{
       position: relative;
-      padding: 35px 0 20px 0;
+      padding: 30px 15px;
       .mb-current-series{
         position: absolute;
         top: -20px;
@@ -59,6 +63,7 @@
       }
       .moreBtn{
         text-align: center;
+        flex-grow: 1;
         .mb-load-more{
           border: none;
           padding: 5px 50px;
